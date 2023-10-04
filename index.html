@@ -21,24 +21,24 @@
     <div class="wrapper container">
       <div class="datechoice row">
         <div><b class="datefont">日付を選択する</b></div>
-        <input type="date" min="<?php echo date('Y-m-d'); ?>" max="2025-4-30" class="datefontc">
+        <input type="date" min="<?php echo date('Y-m-d'); ?>" max="2025-4-30" class="datefontc" id="inputdate">
       </div>
       <br>
       <div class="datechoice row">
         <div><b class="datefont">来店時刻を選択する</b></div>
-        <input type="time" name="example1">
+        <input type="time" name="example1" id="inputtime">
       </div>
       <br>
       <form class="form-inline">
         <div class="row">
           <div class="form-group mx-sm-3 mb-2">
             <label for="inputPassword2" class="sr-only datefont"><b>人数を入力する</b></label>
-            <input type="text" class="form-control forminn" id="inputPassword2" placeholder="-------">
+            <input type="text" class="form-control forminn" id="inputnumber" placeholder="-------">
           </div>
         </div>
         <br>
         <br>
-        <a href="" class="btn_04">予約確定画面に進む</a>
+        <a href="resconfirm.html" class="btn_04" id="form-button">予約確定画面に進む</a>
       </form>
     </div>
     <br>
