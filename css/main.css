@@ -1,0 +1,88 @@
+.navigation {
+    padding: 2vw;
+    background-color: lightblue;
+    color: black;
+    font-weight: bold;
+}
+
+.main-width {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.alert-font {
+    color: crimson;
+}
+
+.back {
+    background-color: lightgray;
+}
+
+.item-margin {
+    margin: 0 auto;
+}
+
+.allbox {
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    font-weight: bold;
+    background: #FFF;
+    border: solid 3px #FFF;/*線*/
+    border-radius: 30px;/*角の丸み*/
+}
+
+.padding-top {
+    padding-top: 2vw;
+}
+
+.padding-top-form {
+    padding-top: 4vw;
+}
+
+.padding-bottom-form {
+    padding-bottom: 4vw;
+}
+
+
+.padding-bottom {
+    padding-bottom: 2vw;
+}
+
+.item-center {
+    text-align: center;
+}
+
+
+/*フォーム内デザイン*/
+.form-font{
+    font-size: 2vw;
+    text-align: center;
+}
+
+.form-width {
+    width: 80%;
+}
+
+.form-margin{
+    margin-left: 20%;
+}
+
+.disable {
+    display: none;
+    color: firebrick;
+}
+
+
+
+/*フッターデザイン*/
+
+.footer {
+    padding: 1.5vw;
+    background-color: #777777;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+

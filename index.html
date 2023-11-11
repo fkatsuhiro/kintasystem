@@ -1,57 +1,91 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="kinta.css">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>予約受付用ページ</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div class="theme">
-        <b>予約受付フォーム</b>
+      <div class="navigation">
+        <div>予約受付フォーム</div>
       </div>
     </header>
-    <br>
-    <br>
-    <div class="wrapper container">
-      <div class="datechoice row">
-        <div><b class="datefont">日付を選択する</b></div>
-        <input type="date" min="<?php echo date('Y-m-d'); ?>" max="2025-4-30" class="datefontc" id="inputdate">
-      </div>
-      <br>
-      <div class="datechoice row">
-        <div><b class="datefont">来店時刻を選択する</b></div>
-        <input type="time" name="example1" id="inputtime">
-      </div>
-      <br>
-      <form class="form-inline">
-        <div class="row">
-          <div class="form-group mx-sm-3 mb-2">
-            <label for="inputPassword2" class="sr-only datefont"><b>人数を入力する</b></label>
-            <input type="text" class="form-control forminn" id="inputnumber" placeholder="-------">
+    <div class="back">
+      <div class="main-width padding-top padding-bottom">
+        <div class="item-mergin allbox">
+          <div class="form-font item-center padding-top-form padding-bottom-form row justify-content-center">
+            <div>予約入力フォーム</div>
+            <button type="button" class="btn btn-light" id="clearbutton">clear!</button>
           </div>
-        </div>
-        <br>
-        <br>
-        <a href="resconfirm.html" class="btn_04" id="form-button">予約確定画面に進む</a>
-      </form>
-    </div>
-    <br>
-    <br>
-    <footer class="footerinc">
-      <div>
-        ©Ka2Corder.inc 2023.9.21
+          <div class="form-width">
+            <form action="" method="">
+              <div class="form-margin">
+                <div class="row padding-top">
+                  <div class="col-6">姓</div>
+                  <div class="col-6">名</div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="Firstname" placeholder="firstname">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" id="Lastname" placeholder="lastname">
+                  </div>
+                </div>
+                <div class="alert-font firstname"></div>
+                <div class="alert-font lastname"></div>
+                <div class="padding-top">
+                  <label for="start">日時を選択する</label>
+                  <input type="date" id="start" name="trip-start" value="2023-11-01" min="2023-11-01" max="2024-02-01"/>
+                  <div class="alert-font alerttime"></div>
+                </div>
+                <div class="padding-top">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">人数を選択する</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">1</a></li>
+                    <li><a class="dropdown-item">2</a></li>
+                    <li><a class="dropdown-item">3</a></li>
+                    <li><a class="dropdown-item">4</a></li>
+                    <li><a class="dropdown-item">5</a></li>
+                    <li><a class="dropdown-item">6</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item">それ以上の場合</a></li>
+                  </ul>
+                </div>
+                <div class="padding-top padding-bottom">メールアドレス</div>
+                <div class="form-group ">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="sample@example.com">
+                  <div class="alert-font alertEmail"></div>
+                </div>
+                <div class="row g-3 align-items-center padding-top">
+                  <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">パスワード</label>
+                    <input type="password" id="inputPassword6" class="form-control" aria-labelledby="passwordHelpInline">
+                    <div class="alert-font alertPass"></div>
+                  </div>
+                  <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text disable">
+                     半角8文字から20文字で入力してください
+                    </span>
+                  </div>
+                  <div class="col-12 item-center padding-top padding-bottom">
+                    <button type="button" class="btn btn-primary" id="sendsubmit">送信</button>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>  
       </div>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="jQuery3.5.1.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="bootstrap.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="bootstrap4.5.0.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </div>
+    <div class="footer">
+      <div>ka2coder.Inc</div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
