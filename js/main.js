@@ -5,10 +5,12 @@ $(window).on("load resize", function(){
         $("#full-screen").removeClass("main-width").addClass("mobile-width");
         $("#form-screen").removeClass("form-width").addClass("form-width-mobile");
         $("#margin").removeClass("form-margin").addClass("form-margin-mobile");
+        $("#back").removeClass("back").addClass("back-mobile");
     }else {
         $("#full-screen").removeClass("mobile-width").addClass("main-width");
         $("#form-screen").removeClass("form-width-mobile").addClass("form-width");
         $("#margin").removeClass("form-margin-mobile").addClass("form-margin");
+        $("#back").removeClass("back-mobile").addClass("back");
    }
 });
 

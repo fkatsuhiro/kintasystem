@@ -24,6 +24,10 @@
     background-color: lightgray;
 }
 
+.back-mobile {
+    background-color: white;
+}
+
 .item-margin {
     margin: 0 auto;
 }
