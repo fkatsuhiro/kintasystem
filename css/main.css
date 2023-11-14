@@ -11,7 +11,7 @@
 }
 
 .mobile-width {
-    width: 80%;
+    width: 98%;
     min-width: 300px;
     margin: 0 auto;
 }
@@ -69,8 +69,16 @@
     width: 80%;
 }
 
+.form-width-mobile {
+    width: 95%;
+}
+
 .form-margin{
     margin-left: 20%;
+}
+
+.form-margin-mobile {
+    margin: 0 auto;
 }
 
 .disable {

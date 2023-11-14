@@ -3,8 +3,12 @@ $(window).on("resize", function(){
     const smWindowSize = 700;
     if (window.innerWidth <=  smWindowSize){
         $("#full-screen").removeClass("main-width").addClass("mobile-width");
+        $("#form-screen").removeClass("form-width").addClass("form-width-mobile");
+        $("#margin").removeClass("form-margin").addClass("form-margin-mobile");
     }else {
         $("#full-screen").removeClass("mobile-width").addClass("main-width");
+        $("#form-screen").removeClass("form-width-mobile").addClass("form-width");
+        $("#margin").removeClass("form-margin-mobile").addClass("form-margin");
    }
 });
 
