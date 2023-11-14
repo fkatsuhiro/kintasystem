@@ -14,9 +14,9 @@
       </div>
     </header>
     <div class="back">
-      <div class="main-width padding-top padding-bottom">
+      <div class="main-width padding-top padding-bottom" id="full-screen">
         <div class="item-mergin allbox">
-          <div class="form-font item-center padding-top-form padding-bottom-form row justify-content-center">
+          <div class="form-font h4 item-center padding-top-form padding-bottom-form row justify-content-center">
             <div>予約入力フォーム</div>
             <button type="button" class="btn btn-light" id="clearbutton">clear!</button>
           </div>
@@ -37,25 +37,17 @@
                 </div>
                 <div class="alert-font firstname"></div>
                 <div class="alert-font lastname"></div>
-                <div class="padding-top">
-                  <label for="start">日時を選択する</label>
-                  <input type="date" id="start" name="trip-start" value="2023-11-01" min="2023-11-01" max="2024-02-01"/>
-                  <div class="alert-font alerttime"></div>
+                <div class="form-group padding-top">
+                  <label for="reservationDate">予約日</label>
+                  <input type="date" class="form-control numberpeople" id="reservationDate" name="reservationDate">
+                  <div id="reservationDateError" class="alert-font form-text text-danger DateError"></div>
                 </div>
-                <div class="padding-top">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">人数を選択する</button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item">1</a></li>
-                    <li><a class="dropdown-item">2</a></li>
-                    <li><a class="dropdown-item">3</a></li>
-                    <li><a class="dropdown-item">4</a></li>
-                    <li><a class="dropdown-item">5</a></li>
-                    <li><a class="dropdown-item">6</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item">それ以上の場合</a></li>
-                  </ul>
+                <div class="form-group padding-top">
+                  <label for="numberOfPeople">人数</label>
+                  <input type="number" class="form-control numberpeople" id="numberOfPeople" name="numberOfPeople">
+                  <div id="numberOfPeopleError" class="alert-font form-text text-danger NumberPeople"></div>
                 </div>
-                <div class="padding-top padding-bottom">メールアドレス</div>
+                <div class="padding-top">メールアドレス</div>
                 <div class="form-group ">
                   <input type="email" class="form-control" id="inputEmail" placeholder="sample@example.com">
                   <div class="alert-font alertEmail"></div>
@@ -67,7 +59,7 @@
                     <div class="alert-font alertPass"></div>
                   </div>
                   <div class="col-auto">
-                    <span id="passwordHelpInline" class="form-text disable">
+                    <span id="passwordHelpInline" class="alert-text form-text disable">
                      半角8文字から20文字で入力してください
                     </span>
                   </div>

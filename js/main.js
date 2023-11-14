@@ -1,4 +1,29 @@
+//画面幅によってデザインが変化するようにするコード
+$(window).on("resize", function(){
+    const smWindowSize = 700;
+    if (window.innerWidth <=  smWindowSize){
+        $("#full-screen").removeClass("main-width").addClass("mobile-width");
+    }else {
+        $("#full-screen").removeClass("mobile-width").addClass("main-width");
+   }
+});
+
+
+
 $(function() {
+    //人数入力の際のアラートに関して
+    $("#numberOfPeople").on("blur", function(){
+
+        var numberOfPeople = $("#numberOfPeople").val();
+      // バリデーション
+        if (numberOfPeople === "" || isNaN(numberOfPeople) || numberOfPeople <= 0 || numberOfPeople % 1 !== 0) {
+            $("#numberOfPeopleError").text("正の整数を入力してください。");
+        } else {
+            $("#numberOfPeopleError").text(""); // エラーメッセージをクリア
+        // ここでフォームの送信や他の処理を行う
+        }
+    })
+
     $("#inputEmail").on("blur" , function(){
         var nullat = [];
         if(!$("#inputEmail").val().match("@")){/*メールアドレスに@が含まれていない場合*/
@@ -67,6 +92,38 @@ $(function() {
             $(".alertPass").toggle(true);
         }
 
+        //予約日の選択に関してエラーメッセージを出す
+        var reservationDate = $("#reservationDate").val();
+        if (reservationDate === "") {
+            s = s + 1;
+          $("#reservationDateError").text("日付を選択してください。");
+        } else {
+          /*$("#reservationDateError").text(""); // エラーメッセージをクリア*/
+          var selectedDate = new Date(reservationDate);
+          var currentDate = new Date();
+    
+          // 過去の日程を選択した場合
+          if (selectedDate < currentDate) {
+            s = s + 1;
+            $("#reservationDateError").text("過去の日程は選択できません。");
+          }
+    
+          // 1か月以上先の日程を選択した場合
+          var maxDate = new Date();
+          maxDate.setMonth(maxDate.getMonth() + 1);
+          if (selectedDate > maxDate) {
+            s = s + 1;
+            $("#reservationDateError").text("1か月以上先の日程は選択できません。");
+          }
+        }
+
+        //人数が選択されていない場合のコードに関して
+        var numberOfPeople = $("#numberOfPeople").val();
+        if (numberOfPeople === "") {
+            s = s + 1;
+            $("#numberOfPeopleError").text("人数を入力してください");
+        } 
+
         if(s > 0){//空文字が存在しないかの判定と、送信できた際のアラートの表示に関して
             window.scroll({
                 top: 0,
@@ -79,6 +136,10 @@ $(function() {
             $("#Firstname").toggle(true);
             $('#Lastname').val('');
             $("#Lastname").toggle(true);
+            $("#reservationDate").val("");
+            $("#reservationDate").toggle(true);
+            $("#numberOfPeople").val("")
+            $("#numberOfPeople").toggle(true);
             $('#inputEmail').val('');
             $("#inputEmail").toggle(true);
             $('#inputPassword6').val('');
@@ -88,6 +149,10 @@ $(function() {
             $(".firstname").toggle(false);
             $(".lastname").hide();
             $(".lastname").toggle(false);
+            $(".DateError").hide();
+            $(".DateError").toggle(false);
+            $(".NumberPeople").hide();
+            $(".NumberPeople").toggle(false);
             $(".alertEmail").hide();
             $(".alertEmail").toggle(false);
             $(".alertPass").hide();
@@ -100,17 +165,23 @@ $(function() {
         $("#Firstname").toggle(true);
         $('#Lastname').val('');
         $("#Lastname").toggle(true);
-        /*日付選択がされていない際のアラートの取り消し項目 */
-        /*後付けで人数入力の欄の項目が入力されていない際のアラートの取り消し項目 */
+        $("#reservationDate").val("");
+        $("#reservationDate").toggle(true);
+        $("#numberOfPeople").val("")
+        $("#numberOfPeople").toggle(true);
         $('#inputEmail').val('');
         $('#inputPassword6').val('');
         $(".disable").hide();
         $(".disable").toggle(false);
-        //送信完了したらアラートをクリアにする
+        //クリアボタンをクリックしたらアラートをクリアにする
         $(".firstname").hide();
         $(".firstname").toggle(false);
         $(".lastname").hide();
         $(".lastname").toggle(false);
+        $(".DateError").hide();
+        $(".DateError").toggle(false);
+        $(".NumberPeople").hide();
+        $(".NumberPeople").toggle(false);
         $(".alertEmail").hide();
         $(".alertEmail").toggle(false);
         $(".alertPass").hide();
