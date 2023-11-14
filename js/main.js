@@ -1,5 +1,5 @@
 //画面幅によってデザインが変化するようにするコード
-$(window).on("resize", function(){
+$(window).on("load resize", function(){
     const smWindowSize = 700;
     if (window.innerWidth <=  smWindowSize){
         $("#full-screen").removeClass("main-width").addClass("mobile-width");
